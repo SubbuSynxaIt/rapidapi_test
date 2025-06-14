@@ -42,3 +42,26 @@ paths:
                   message:
                     type: string
                     example: "API is healthy"
+  /quote/by-author:
+    get:
+      summary: Get quote by author
+      parameters:
+        - name: author
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A quote from the specified author
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  author:
+                    type: string
+                    example: "Mark Twain"
+                  quote:
+                    type: string
+                    example: "The secret of getting ahead is getting started."
