@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Quote of the Day API
+  description: A simple API that returns a random inspirational quote.
+  version: 1.0.0
+servers:
+  - url: https://rapidapi-test.onrender.com
+paths:
+  /quote:
+    get:
+      summary: Get random quote
+      description: Returns a random inspirational quote.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  author:
+                    type: string
+                    example: "Albert Einstein"
+                  quote:
+                    type: string
+                    example: "Life is like riding a bicycle. To keep your balance you must keep moving."
+  /ping:
+    get:
+      summary: Health check
+      description: Returns API status.
+      responses:
+        '200':
+          description: Health check OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+                  message:
+                    type: string
+                    example: "API is healthy"
